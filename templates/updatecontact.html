@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<section style="margin-left: 33%; margin-top: 5%">
+<div class="container">
+<div class="row">
+
+<div class="card col-6">
+<div class="card-body">
+<section class="form-group">
+    <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        {{ field.label_tag }}
+        {{ field }}
+    {% endfor%}
+        <div style="text-align: center; margin-top: 2rem">
+               <input type="submit" value="update">
+        </div>
+
+    </form>
+
+</section>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+{% endblock %}

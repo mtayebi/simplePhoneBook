@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>contacts:</h1>
+    {% for contact in contact_list %}
+        <a data-toggle="collapse" href="#{{ contact.id }}"><h5 style="padding: 1%">{{ contact }}:</h5></a>
+        <section id="{{ contact.id }}" class="collapse-toggle">
+        <p style="margin-left: 8%">Phone:</p>
+        <p style="margin-left: 10%">{{ contact.phone_number }}</p>
+        <p style="margin-left: 8%">Email:</p>
+        <p style="margin-left: 10%">{{ contact.email }}</p>
+        <p style="margin-left: 8%">
+        <a href="{% url 'updatecontact' contact.id %}" id="update_{{ contact.id }}">UPDATE</a> /
+        <a href="{% url 'deletecontact' contact.id %}" id="delete_{{ contact.id }}">DELETE</a>
+        </p>
+        </section>
+    {% endfor %}
+
+{% endblock %}

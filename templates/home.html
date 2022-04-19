@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block bodytitle %}
+<h1 style="text-align: center; padding: 5%;">Phone Book Web Application</h1>
+    <p style="padding: 2%">
+    The Phonebook application contains a set of basic functions for adding,
+    updating, and deleting new contacts. This  phonebook design allows you to
+    perform simple tasks in your phonebook, just like mobile phones.
+    </p>
+    <section style="text-align: center; padding: 10%; font-size: large">
+        <a href="{% url 'contactlist' %}">CONTACTS</a>
+    </section>
+
+{% endblock %}
